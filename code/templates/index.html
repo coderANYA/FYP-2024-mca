@@ -1,0 +1,99 @@
+<!-- Shortcut to generate basic code content in this page => write fextends > Press Enter -->
+{% extends 'layout/base.html' %} 
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGuard</title>
+    <style>
+      body {
+        background-color: #f6c2c8;
+      }
+      .container {
+        width: 100%;
+        /* height: 100px; */
+        margin-top: 10px;
+        padding: 10px;
+        /* border: 5px dashed black; */
+      }
+      .brand-info {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 190px;
+      }
+      .brand-info span {
+        font-size: 6.5rem;
+        text-shadow: 4px 3px palevioletred;
+      }
+      .brand-info p {
+        font-size: 1.5rem;
+      }
+      .wrap {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin-top: -140px;
+      }
+      .box {
+        width: calc(30% - 40px);
+        margin: 10px 40px;
+        background-color: plum;
+        border: 2px solid black;
+        cursor: pointer;
+        color: black;
+        text-align: center;
+        max-height: 400px;
+        box-shadow: 7px 5px 10px black;
+        transition: transform 0.5s ease;
+      }
+      .box:hover {
+        transform: scale(1.2);
+      }
+      #link a {
+        text-decoration: none;
+        color: blue;
+      }
+      #link a:hover {
+        text-decoration: solid underline;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="brand-info">
+        <span>DocGuard</span>
+        <p>
+          "Unlock the Power of Document Intelligence: Detect, Authenticate, and Verify with Confidence"
+        </p>
+      </div>
+      <div class="wrap">
+        <div class="box" id="link">
+          <h4>About Us</h4>
+          <p>
+            To learn more about the project & its maker, go to
+            <a href="/about.html">"About"</a> page.
+          </p>
+        </div>
+        <div class="box">
+          <h4>How To Use DocGuard?</h4>
+          <p>
+            Firstly, you need to sign-up if you are new to DocGuard. If you already have an account on DocGuard, enjoy then!!! DocGuard is free to use. You can check results of a file of upto <strong>100MB.</strong> For this, click on <strong>Upload</strong> button on the Navigation bar. It will take you to the <strong> Upload page</strong>. As soon as it gets uploaded, you can see it by clicking on the <strong> File List</strong> button in the Navigation bar. The required results can be seen on the dashboard.
+          </p>
+        </div>
+        <div class="box">
+          <h4>Extensions Allowed</h4>
+          <p>
+            The uploading as well as the detection of authentication of only
+            these given file extensions are allowed:
+            '.pdf', '.jpg', '.jpeg' & '.png'
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'layout/base.html' %} 
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGuard - Upload</title>
+    <style>
+        body {
+        background-color: #f6c2c8;
+        }
+        .card {
+        background-color: white;  /* Set background color for the card */
+        padding: 24px;
+        margin: 85px; 
+        border-radius: 34px;
+        box-shadow: 0 0 10px black;    /* Add shadow to the card */
+        border: 2px solid black;      /* Add border with color */
+        }
+        .card h1 {
+        text-align: center;     /* Center align the heading */
+        margin-bottom: 15px;    /* Add space below the heading */
+        }
+        .card-body {
+        text-align: center;      /* Center align the form */
+        }
+        .form-control {
+        margin-bottom: 15px;     /* Add space below the input field */
+        }
+        .btn-success {
+        width: 100%;
+        padding: 10px;
+        background-color: palevioletred;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        }
+
+              .links {
+        color: #7e22ce;
+        background-color: white;
+        border: 2px solid white;
+        border-radius: 82px;
+        text-decoration: none;
+        padding: 5px 20px;
+        margin: 7px;
+        font-size: large;
+        font-weight: bold;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: inline-block;
+        /* margin-right: 10px; */
+      }
+      .links:hover {
+        background-color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 mx-auto card">
+                <h1>Upload file</h1>
+                <form method="post" enctype="multipart/form-data" class="card-body">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Click on "Choose File"</label>
+                        <input type="file" class="form-control" name="file" id="file" aria-describedby="fileHelpId" />
+                        <div id="fileHelpId" class="form-text">Click on Upload button below</div>
+                    </div>
+                    <button class="btn-success">Upload</button>
+                </form>
+                <a class="links" href="/file/list">File List</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

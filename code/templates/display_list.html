@@ -1,0 +1,81 @@
+{% extends 'layout/base.html' %} 
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocGuard - display_list</title>
+    <style>
+      body {
+        background-color: #f6c2c8;
+      }
+      .container {
+        width: 100%;
+        margin-top: 10px;
+      }
+      table {
+        width: 100%;
+        border: 0px solid black;
+      }
+      th, td {
+        border: 2px solid black;
+        padding: 10px;
+        text-align: center;
+      }
+      .purple {
+        color: blue;
+        text-decoration: none;
+      }
+      .purple:hover {
+        color: purple;
+        text-decoration: underline;
+      }
+       button {
+        padding: 6px 12px;
+        background-color: #dc3545;
+        color: white;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+      }
+       button:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <div class="table-responsive">
+                    <table class="table table-light">
+                          <thead>
+                            <tr>
+                              <th scope="col">Id</th>
+                              <th scope="col">Path</th>
+                              <th scope="col">Date</th>
+                              <th scope="col">Action</th>
+                              <th scope="col">Delete</th>
+                            </tr>
+                          </thead>
+                        <tbody>
+                            {% for file in files %}
+                            <tr>
+                                <td>{{ file.id }}</td>
+                                <td><a class="purple" href=/file/{{file.id}}/view">{{file.path}}</a></td>
+                                <td>{{ file.created_at }}</td>
+                                <td><a class="purple" href="/file/{{file.id}}/view">View</a></td>
+                                <td><a class="purple" href="/delete/{{file.id}}"><button>Delete</button></a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>    
+{% endblock %}

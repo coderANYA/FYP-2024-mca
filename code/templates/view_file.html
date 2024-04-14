@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <img src="/{{file.path}}" alt="{{file.id}}" class="img-fluid">
+          <a href="/delete/{{file.id}}" class="btn btn-danger">Delete</a>
+          <a href="/detect/{{file.id}}" class="btn btn-primary">Detect</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

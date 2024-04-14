@@ -1,0 +1,27 @@
+{% extends 'layout/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>Result</h1>
+        <p>Here is the result of the calculation:</p>
+        <p>class : {{ cls }}</p>
+        <div class="col-md-6">
+            <img src="/{{img}}" alt="Result" class="img-fluid">
+            <p>Accuracy: {{ conf }}</p>
+        </div>
+
+        <div class="col-md-6">
+
+            {% if ela_path %}
+            <img src="/{{ela_path}}" alt="Result" class="img-fluid">
+
+            {% endif %}
+        </div>
+        <a href="/" class="btn btn-primary">Back</a>
+    </div>
+        <div class="col">
+            <a href="/" class="btn btn-primary">Back</a>
+        </div>
+</div>
+</div>
+{% endblock %}
