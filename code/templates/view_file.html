@@ -1,13 +1,44 @@
 {% extends 'layout/base.html' %}
 {% block content %}
+<style>
+  .custom-card {
+    width: 300px;   /* Set the desired width for the card */
+    height: auto;   /* Let the height adjust automatically */
+    margin: auto;    /* Center the card horizontally */
+    margin-top: 20px;    /* Adjust the top margin as needed */
+    box-shadow: 0 0 10px black;    /* Add shadow to the card */
+  }
+  .card-img {
+    max-width: 100%;   /* Set the maximum width of the image */
+    max-height: 100%;   /* Set the maximum height of the image */
+    display: block;  /* Ensure the image behaves as a block element */
+    margin: auto;      /* Center the image horizontally */
+  }
+  .btn_btn {
+    text-decoration: none;
+    color: black;
+    padding: 8px 15px;
+    margin: 4px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    float: right;
+    font-weight: bold;
+    background-color: palevioletred;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 8px;
+  }
+  .btn_btn:hover{
+    color: white;
+  }
+</style>
 <div class="container my-5">
   <div class="row">
     <div class="col-6 mx-auto">
-      <div class="card">
+      <div class="card custom-card"> <!-- Add the custom-card class -->
         <div class="card-body">
-          <img src="/{{file.path}}" alt="{{file.id}}" class="img-fluid">
-          <a href="/delete/{{file.id}}" class="btn btn-danger">Delete</a>
-          <a href="/detect/{{file.id}}" class="btn btn-primary">Detect</a>
+          <img src="/{{file.path}}" alt="{{file.id}}" class="img-fluid card-img">    <!-- Add the card-img class -->
+          <a href="/delete/{{file.id}}" class="btn_btn">Delete</a>
+          <a href="/detect/{{file.id}}" class="btn_btn">Detect</a>
         </div>
       </div>
     </div>

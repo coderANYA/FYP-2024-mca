@@ -39,7 +39,7 @@ def login():
                         session['email'] = user.email
                         session['id'] = user.id
                         del db
-                        flash('login successfull','success')
+                        flash('Login Successful','success')
                         return redirect('/')
                     else:
                         flash('email or password is wrong','danger')
@@ -92,7 +92,7 @@ def file_list():
 
 # sixth page (VIEW_FILE PAGE)
 # 127.0.0.1:8000/file/4/view
-@app.route('/file/<int:id>/view/')      #<int:id> means dynamic path
+@app.route('/file/<int:id>/view/')      # <int:id> means dynamic path
 def file_view(id):
     db = open_db()
     file = db.query(File).get(id)
@@ -120,6 +120,7 @@ def about():
     #code
     return render_template('about.html')
 
+# LogOut
 @app.route('/logout')
 def logout():
     session.clear()
@@ -151,10 +152,10 @@ def detect_forgery(id):
                 # os.makedirs('static/modified', exist_ok=True)
                 # modified_path = f'static/modified/{img.id}.png'
                 # modify_boundary.save(modified_path)
-                return render_template('result.html', img =img, cls = cls, conf = conf, ela_path = ela_path)
+                return render_template('result.html', img = img, cls = cls, conf = conf, ela_path = ela_path)
             except Exception as e:
                 print(e)
-        return render_template('result.html', img =img, cls = cls, conf = conf)
+        return render_template('result.html', img = img, cls = cls, conf = conf)
     else:
         flash('file not found','danger')
     return redirect('/file/list')

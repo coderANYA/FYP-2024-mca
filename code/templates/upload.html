@@ -12,7 +12,7 @@
         background-color: #f6c2c8;
         }
         .card {
-        background-color: white;  /* Set background color for the card */
+        background-color: white;/* Set background color for the card */
         padding: 24px;
         margin: 85px; 
         border-radius: 34px;
@@ -39,24 +39,23 @@
         border-radius: 5px;
         cursor: pointer;
         }
-
-              .links {
-        color: #7e22ce;
-        background-color: white;
-        border: 2px solid white;
-        border-radius: 82px;
-        text-decoration: none;
-        padding: 5px 20px;
-        margin: 7px;
-        font-size: large;
-        font-weight: bold;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        display: inline-block;
-        /* margin-right: 10px; */
-      }
-      .links:hover {
-        background-color: palevioletred;
-      }
+        .btn-file_list {
+          text-decoration: none;
+          color: black;
+          padding: 8px 15px;
+          margin-right: 500px;
+          margin-top: -50px;
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          float: right;
+          font-weight: bold;
+          background-color: palevioletred;
+          cursor: pointer;
+          font-size: 17px;
+          border-radius: 8px;
+        }
+        .btn-file_list:hover {
+          color: white;
+        }
     </style>
   </head>
   <body>
@@ -72,10 +71,12 @@
                     </div>
                     <button class="btn-success">Upload</button>
                 </form>
-                <a class="links" href="/file/list">File List</a>
+                <!-- <a class="links" href="/file/list">File List</a> -->
             </div>
         </div>
     </div>
+
+  <a class="btn-file_list" href="/file/list">File List</a>
 </body>
 </html>
 {% endblock %}

@@ -1,27 +1,66 @@
 {% extends 'layout/base.html' %}
 {% block content %}
+
+<style>
+ .custom-card {
+    width: 300px;   /* Set the desired width for the card */
+    height: auto;   /* Let the height adjust automatically */
+    margin: auto;    /* Center the card horizontally */
+    margin-top: 20px;    /* Adjust the top margin as needed */
+    box-shadow: 0 0 10px black;    /* Add shadow to the card */
+  }
+  .card-img {
+    max-width: 100%;   /* Set the maximum width of the image */
+    max-height: 100%;   /* Set the maximum height of the image */
+    display: block;  /* Ensure the image behaves as a block element */
+    margin: auto;      /* Center the image horizontally */
+  }
+  .btn_btn {
+    text-decoration: none;
+    color: black;
+    padding: 8px 15px;
+    margin: 4px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    float: right;
+    font-weight: bold;
+    background-color: palevioletred;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 8px;
+  }
+  .btn_btn:hover{
+    color: white;
+  }
+</style>
+
 <div class="container">
     <div class="row">
         <h1>Result</h1>
-        <p>Here is the result of the calculation:</p>
-        <p>class : {{ cls }}</p>
-        <div class="col-md-6">
-            <img src="/{{img}}" alt="Result" class="img-fluid">
-            <p>Accuracy: {{ conf }}</p>
+        <p><strong>Accuracy of the image uploaded: {{ conf }}</strong></p>
+    
+        <div class="col-6 mx-auto">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <img src="/{{img}}" alt="Result" class="img-fluid card-img">
+                </div>
+            </div>
         </div>
 
-        <div class="col-md-6">
-
+        <div class="col-6 mx-auto">
             {% if ela_path %}
-            <img src="/{{ela_path}}" alt="Result" class="img-fluid">
-
+            <div class="card custom-card">
+                <div class="card-body">
+                    <img src="/{{ela_path}}" alt="Result" class="img-fluid card-img">
+                </div>
+            </div>
             {% endif %}
         </div>
-        <a href="/" class="btn btn-primary">Back</a>
     </div>
+
+    <div class="row mt-3">
         <div class="col">
-            <a href="/" class="btn btn-primary">Back</a>
+            <a href="/file/list" class="btn_btn">Back</a>
         </div>
-</div>
+    </div>
 </div>
 {% endblock %}
