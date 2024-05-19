@@ -6,3 +6,6 @@ Step 2 : Type cd (space) code
 Step 3 : Press Enter
 Step 4 : Type python (space) app.py
 Step 5 : Press Enter
+Step 6 : Click on the 'Follow Link'
+
+

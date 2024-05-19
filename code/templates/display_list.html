@@ -32,7 +32,13 @@
         color: purple;
         text-decoration: underline;
       }
-        button {
+      body {                         
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+      button {
         padding: 6px 12px;
         background-color: #dc3545;
         color: white;
@@ -40,7 +46,7 @@
         border: none;
         cursor: pointer;
       }
-        button:hover {
+      button:hover {
         background-color: #c82333;
       }
       
@@ -66,7 +72,7 @@
                             {% for file in files %}
                             <tr>
                                 <td>{{ file.id }}</td>
-                                <td><a class="purple" href=/file/{{file.id}}/view">{{file.path}}</a></td>
+                                <td><a class="purple" href="/file/{{file.id}}/view">{{file.path}}</a></td>
                                 <td>{{ file.created_at }}</td>
                                 <td><a class="purple" href="/file/{{file.id}}/view">View</a></td>
                                 <td><a class="purple" href="/delete/{{file.id}}"><button>Delete</button></a></td>
