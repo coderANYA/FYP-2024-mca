@@ -32,13 +32,7 @@
         color: purple;
         text-decoration: underline;
       }
-      body {                         
-        min-height: 100vh;
-        min-height: 100dvh;
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-      }
-      button {
+      .red {
         padding: 6px 12px;
         background-color: #dc3545;
         color: white;
@@ -46,11 +40,15 @@
         border: none;
         cursor: pointer;
       }
-      button:hover {
+      .red:hover {
         background-color: #c82333;
       }
-      
-      
+      body {                         
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
     </style>
   </head>
   <body>
@@ -75,7 +73,7 @@
                                 <td><a class="purple" href="/file/{{file.id}}/view">{{file.path}}</a></td>
                                 <td>{{ file.created_at }}</td>
                                 <td><a class="purple" href="/file/{{file.id}}/view">View</a></td>
-                                <td><a class="purple" href="/delete/{{file.id}}"><button>Delete</button></a></td>
+                                <td><a class="purple" href="/delete/{{file.id}}"><button class="red">Delete</button></a></td>
                             </tr>
                             {% endfor %}
                         </tbody>

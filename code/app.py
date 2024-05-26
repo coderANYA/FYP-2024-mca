@@ -65,10 +65,18 @@ def register():
         if len(username) == 0 or len(email) == 0 or len(password) == 0 or len(cpassword) == 0:
             flash("All fields are required", 'danger')
             return redirect('/register') # reload the page
+        
+        if password != cpassword:
+            flash("Passwords do not match", 'danger')
+            return redirect('/register')  # reload the page
+        
         user = User(username = username, email = email, password = password)
-        try:add_to_db(user)
+        try:
+            add_to_db(user)
+            flash("You have successfully registered!!!", 'success')
+            return redirect('/')  # redirect to index page 
         except Exception as e:
-            flash("error: contact admin",'danger')
+            flash("Error: Contact Admin",'danger')
     return render_template('register.html')
 
 # fourth page (FILE UPLOADING PAGE)
