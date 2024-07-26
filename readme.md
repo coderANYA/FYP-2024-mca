@@ -1,12 +1,13 @@
 pip install -r requirements.txt
 
 To run the web app :
-Step 1 : Press Ctrl + J
-Step 2 : Type cd (space) code
-Step 3 : Press Enter
-Step 4 : Type python (space) app.py
-Step 5 : Press Enter
-Step 6 : Click on the 'Follow Link'
+Step 1 : First select the file `app.py` because the commands below will be run upon it.
+Step 2 : Press Ctrl + J
+Step 3 : Type cd (space) code
+Step 4 : Press Enter
+Step 5 : Type python (space) app.py
+Step 6 : Press Enter
+Step 7 : Click on the 'Follow Link'
 
 ![Screenshot 2024-06-21 144258](https://github.com/coderANYA/FYP-2024-mca/assets/136494227/840872b5-5e95-4e77-8ad8-8198a04ffdd5)
 ![Screenshot 2024-06-21 144342](https://github.com/coderANYA/FYP-2024-mca/assets/136494227/aafc75d4-d81a-4bff-a9e0-66a7c23a103d)
